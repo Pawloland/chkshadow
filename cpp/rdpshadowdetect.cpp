@@ -127,8 +127,8 @@ void  printObject(POBJECT_DIRECTORY_INFORMATION info)
 {
   static int ord = 0;
   if ( verbose ) {
-    printf( _T("TYPE[%d]: %S\n"), ord, info->TypeName.Buffer);
-    printf( _T("NAME[%d]: %S\n"), ord, info->Name.Buffer);           
+    wprintf( _T("TYPE[%d]: %S\n"), ord, info->TypeName.Buffer);
+    wprintf( _T("NAME[%d]: %S\n"), ord, info->Name.Buffer);           
     printf("\n");    
   }
   ord++;
@@ -183,7 +183,7 @@ int _tmain(int argc, char** argv)
 
       PCWSTR ObjectType = L"Event";
 
-      printf( _T("\nListing '%S', type: '%S'\n"), Dir, ObjectType );
+      wprintf( _T("\nListing '%S', type: '%S'\n"), Dir, ObjectType );
       if ( EnumObjects( Dir , ObjectType, objectsMatchingType, L"RDPSchedulerEvent", objectsMatchingName, printObject ) ) {
         ec = 0;
         printf("Found objects of '%S' type: %d\n", ObjectType, objectsMatchingType );
@@ -197,7 +197,7 @@ int _tmain(int argc, char** argv)
         printf("Failed to enumarate objects\n");
       }
     } else {      
-      printf(_T("Failed to retrieve ntdll.dll function pointers\n"));
+      wprintf(_T("Failed to retrieve ntdll.dll function pointers\n"));
     }
   }
   return ec;
