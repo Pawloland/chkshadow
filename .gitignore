@@ -1,3 +1,8 @@
 cpp/.vs
 cpp/rdpshadowdetect
 cpp/x64
+c#/.vs
+c#/bin
+c#/obj
+c#/RDPShadowDetector.csproj.user
+c#/Properties/PublishProfiles/FolderProfile.pubxml.user
